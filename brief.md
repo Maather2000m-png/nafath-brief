@@ -3,9 +3,6 @@ Version: NAFATH-V1
 
 Track: Cybersecurity
 
-Version: NAFATH-V1
-Track: Cybersecurity
-
 ## Overview
 The Nafath mission proposes a single national SSO service where citizens log in once via a mobile app and website to access many government services. Software defines the login flow using OIDC and OAuth2 to separate authentication from API authorization. AI supports risk-based detection of suspicious logins but introduces fairness and security concerns. Mobile implements Android runtime permissions for camera and notifications. Networking benefits from DNS over HTTPS to protect lookup privacy. Cybersecurity requires phishing-resistant MFA like FIDO2. Data obligations under Oman PDPL govern consent, breach notification, and data minimization.
 
@@ -34,5 +31,7 @@ Under Oman PDPL Royal Decree 6/2022, the authority must obtain explicit written 
 Resource: https://www.mtcit.gov.om/
 
 ## Misconception in My Track
+One common wrong belief is that any MFA, such as SMS OTP or TOTP authenticator apps, counts as phishing-resistant. The correct version is that only FIDO2/WebAuthn and PIV/PIV-derived PKI authentication qualify as phishing-resistant because they use origin-bound cryptography. The CISA fact sheet proves this under the heading "Phishing-Resistant MFA" and the table "Phishing-Resistant Authenticator Types" which explicitly excludes SMS, voice, TOTP and push.
 
 ## Open Question
+If Nafath adopts synced cloud passkeys, does the recovery via the cloud account password downgrade phishing resistance, and should device-bound keys be required for high-risk government transactions?
